@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>month</title>
+</head>
+<body>
+<label for="monthNumber">Nhập tháng</label>
+<input type="number" name="monthNumber" id="monthNumber">
+<button onclick="displayDayInMonth()" >Tính số ngày</button>
+<p id="showMessage"></p>
+<script>
+    function displayDayInMonth() {
+        let month = +document.getElementById("monthNumber").value;
+
+        switch (month) {
+            case 2:
+                document.getElementById("showMessage").innerHTML = "Tháng " + month + " có 28 hoặc 29 ngày";
+                break;
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById("showMessage").innerHTML = "Tháng " + month + " có 31 ngày";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById("showMessage").innerHTML = "Tháng " + month + " có 30 ngày";
+                break;
+            default:
+                document.getElementById("showMessage").innerHTML = "Một năm chỉ có 12 tháng thôi";
+        }
+    }
+
+</script>
+</body>
+</html>

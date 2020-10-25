@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>love</title>
+</head>
+<body>
+<h1 style="position: absolute; left:220px;top: 180px">Do you love me?</h1>
+<input type="button" value="YES" onclick="sayYes()" style="position: absolute;left: 260px;top:245px">
+<input type="button" id="btnNo" value="NO" onmouseover="sayNo()" style="position: absolute;left: 310px;top:245px;">
+
+<script>
+    function sayYes() {
+        alert("codegym");
+    }
+    function sayNo() {
+        let buttonNo = document.getElementById("btnNo");
+        buttonNo.style.left = parseInt(Math.random()*1000) +"px";
+        buttonNo.style.top = parseInt(Math.random()*1000) + "px";
+       }
+</script>
+</body>
+</html>

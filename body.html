@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>body</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><lable for="bodyWeight">Weigth</lable></td>
+        <td><input type="number" name="bodyWeight" id="bodyWeight">
+        </td>
+    </tr>
+    <tr>
+        <td><label for="bodyHeight">Height</label></td>
+        <td><input type="number" name="bodyHeight" id="bodyHeight"></td>
+    </tr>
+    <tr>
+        <td><button onclick="countingBMI()">Sumit</button></td>
+        <td><p id="BMIresult">BMI:</p></td>
+    </tr>
+    <tr>
+        <td colspan="2"><p id="message"><strong></strong></p></td>
+    </tr>
+</table>
+<script>
+    function countingBMI() {
+        let bodyWeight = +document.getElementById("bodyWeight").value;
+        let bodyHeight = +document.getElementById("bodyHeight").value;
+        let bmiResult = bodyWeight / bodyHeight**2;
+
+
+        document.getElementById("BMIresult").innerHTML = "BMI: " + bmiResult.toFixed(2);
+
+        if ( bmiResult < 18) {
+            document.getElementById("message").innerHTML = "Your body is Underweight";
+        } else if (bmiResult < 25) {
+            document.getElementById("message").innerHTML = "Your body is Normal";
+        } else if (bmiResult < 30) {
+            document.getElementById("message").innerHTML = "Your body is Overweight";
+        } else {
+            document.getElementById("message").innerHTML = "Obese"
+        }
+    }
+</script>
+</body>
+</html>
